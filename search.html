@@ -71,23 +71,4 @@
         // البحث وعرض النتائج
         const results = mockData.filter(item => item.title.includes(query));
         const resultsDiv = document.getElementById('results');
-        const noResults = document.getElementById('no-results');
-
-        if (results.length > 0) {
-            results.forEach(item => {
-                const resultCard = document.createElement('div');
-                resultCard.classList.add('col-md-6', 'search-item');
-
-                resultCard.innerHTML = `
-                    <h5>${item.title}</h5>
-                    <p>${item.description}</p>
-                    <a href="${item.link}" class="btn btn-primary">قراءة المزيد</a>
-                `;
-                resultsDiv.appendChild(resultCard);
-            });
-        } else {
-            noResults.style.display = 'block';
-        }
-    </script>
-</body>
-</html>
+    
