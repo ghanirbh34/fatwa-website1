@@ -30,6 +30,12 @@
             display: flex;
             align-items: center;
         }
+        .no-results {
+            display: none;
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -43,29 +49,17 @@
     <div class="container my-4">
         <!-- Search Bar -->
         <div class="mb-4">
-            <form class="d-flex" action="/search" method="GET">
-                <input class="form-control me-2" type="search" name="query" placeholder="ابحث عن فتوى، درس أو موعظة..." aria-label="Search">
+            <form class="d-flex" id="searchForm">
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="ابحث عن فتوى، درس أو موعظة..." aria-label="Search">
                 <button class="btn btn-primary" type="submit">بحث</button>
             </form>
         </div>
 
-        <!-- Categories -->
-        <div class="mb-4">
-            <h2>التصنيفات</h2>
-            <div class="d-flex flex-wrap">
-                <a href="/category/fiqh" class="btn btn-outline-secondary m-1 category-btn">الفقه</a>
-                <a href="/category/aqeedah" class="btn btn-outline-secondary m-1 category-btn">العقيدة</a>
-                <a href="/category/transactions" class="btn btn-outline-secondary m-1 category-btn">المعاملات</a>
-                <a href="/category/family" class="btn btn-outline-secondary m-1 category-btn">الأسرة</a>
-                <a href="/category/lectures" class="btn btn-outline-secondary m-1 category-btn">الدروس</a>
-                <a href="/category/advice" class="btn btn-outline-secondary m-1 category-btn">المواعظ</a>
-            </div>
-        </div>
-
-        <!-- Latest Fatwas -->
-        <div>
+        <!-- Search Results -->
+        <div id="resultsContainer">
+            <!-- Latest Fatwas -->
             <h2>أحدث المحتويات</h2>
-            <div class="list-group">
+            <div id="resultsList" class="list-group">
                 <a href="/fatwa/1" class="list-group-item list-group-item-action">
                     <img src="https://via.placeholder.com/100" alt="فتوى 1">
                     <div>
@@ -84,6 +78,11 @@
                 </a>
             </div>
         </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="no-results">
+            <p>لا توجد نتائج للبحث.</p>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -91,6 +90,34 @@
         <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة الجزائري. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const resultsList = document.getElementById('resultsList');
+            const noResults = document.getElementById('noResults');
+            
+            // Simulate search (you can replace this with real search logic)
+            const items = resultsList.querySelectorAll('.list-group-item');
+            let hasResults = false;
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex'; // Show matching items
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none'; // Hide non-matching items
+                }
+            });
+            
+            if (hasResults) {
+                noResults.style.display = 'none'; // Hide "no results" message
+            } else {
+                noResults.style.display = 'block'; // Show "no results" message
+            }
+        });
+    </script>
 </body>
 </html>
