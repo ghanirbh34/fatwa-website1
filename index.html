@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منبر الشيخ عبد الحميد بوطاعة الجزائري</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"> <!-- استخدام الخط المغربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"> <!-- الخط المغربي -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
+            padding-top: 50px;
         }
 
         header {
             background: linear-gradient(45deg, #0d6efd, #6610f2);
             color: white;
-            padding: 20px;
+            padding: 20px 0;
+            margin-bottom: 40px;
         }
 
         .header-title {
@@ -23,9 +25,22 @@
             font-size: 3rem;
             font-weight: bold;
             text-align: center;
+            margin: 0;
+        }
+
+        .header-title small {
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 10px;
         }
 
         .search-bar input {
+            border-radius: 20px;
+            max-width: 500px;
+            margin-right: 10px;
+        }
+
+        .search-bar button {
             border-radius: 20px;
         }
 
@@ -48,6 +63,7 @@
             border-radius: 10px;
             margin-bottom: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
         }
 
         footer {
@@ -55,6 +71,7 @@
             color: white;
             padding: 15px;
             text-align: center;
+            margin-top: 40px;
         }
 
         /* التنسيق لرسالة عدم وجود نتائج */
@@ -65,17 +82,21 @@
             margin-top: 50px;
             font-weight: bold;
         }
+
+        .container {
+            max-width: 1200px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1 class="header-title">منبر الشيخ عبد الحميد بوطاعة الجزائري</h1>
-        <p class="text-center">مرجعك للدروس، المواعظ، والفتاوى الموثوقة</p>
+        <small>مرجعك للدروس، المواعظ، والفتاوى الموثوقة</small>
     </header>
 
-    <div class="container my-4">
+    <div class="container">
         <!-- شريط البحث -->
-        <div class="mb-4">
+        <div class="d-flex justify-content-center mb-4">
             <form class="d-flex search-bar" action="/search" method="GET">
                 <input class="form-control me-2" type="search" name="query" placeholder="ابحث عن فتوى، درس أو موعظة..." aria-label="Search">
                 <button class="btn btn-primary" type="submit">بحث</button>
@@ -91,10 +112,10 @@
             <p id="no-results" style="display: none;">عذراً، لا توجد نتائج</p>
         </div>
 
-        <!-- أحدث المحتويات - لا تظهر أي عناوين لأن المحتوى لم يتم نشره بعد -->
+        <!-- أحدث المحتويات - لا تظهر أي عناوين حالياً -->
         <div class="mb-4">
             <h2>أحدث المحتويات</h2>
-            <!-- لا يتم عرض أي محتوى هنا حالياً -->
+            <!-- سيتم إضافة المحتوى لاحقًا -->
         </div>
     </div>
 
