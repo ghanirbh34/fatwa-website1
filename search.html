@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج البحث</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>نتائج البحث</h1>
+    </header>
+
+    <div class="container my-4">
+        <h2>نتائج البحث عن: "<span id="search-query"></span>"</h2>
+        <div id="results">
+            <!-- النتائج ستظهر هنا -->
+        </div>
+        <p id="no-results" class="text-danger" style="display: none;">لا توجد نتائج مطابقة لبحثك.</p>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة الجزائري. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // محاكاة نتائج البحث (اختياري)
+        const mockData = [
+            { title: 'حكم الصلاة في المسجد مع وجود الوباء', link: '/fatwa/1' },
+            { title: 'حكم التعامل بالعملات الرقمية', link: '/fatwa/2' }
+        ];
+
+        // استرجاع استعلام البحث من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query') || '';
+
+        // عرض استعلام البحث
+        document.getElementById('search-query').textContent = query;
+
+        // البحث في البيانات وعرض النتائج
+        const results = mockData.filter(item => item.title.includes(query));
+        const resultsDiv = document.getElementById('results');
+        const noResults = document.getElementById('no-results');
+
+        if (results.length > 0) {
+            results.forEach(item => {
+                const resultDiv = document.createElement('div');
+                resultDiv.classList.add('my-3');
+                resultDiv.innerHTML = `<a href="${item.link}" class="btn btn-link">${item.title}</a>`;
+                resultsDiv.appendChild(resultDiv);
+            });
+        } else {
+            noResults.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
