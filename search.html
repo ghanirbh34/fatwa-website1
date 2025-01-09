@@ -3,55 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نتائج البحث</title>
+    <title>نتائج البحث - منبر الشيخ عبد الحميد بوطاعة الجزائري</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        header {
+            background: linear-gradient(45deg, #0d6efd, #6610f2);
+            color: white;
+        }
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+        .result-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        .result-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #212529;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-3">
-        <h1>نتائج البحث</h1>
+    <!-- Header -->
+    <header class="text-center py-5">
+        <h1 class="header-title">نتائج البحث</h1>
+        <p class="mb-0">استعرض نتائج البحث عن المحتويات المطلوبة</p>
     </header>
 
-    <div class="container my-4">
-        <h2>نتائج البحث عن: "<span id="search-query"></span>"</h2>
+    <!-- Main Content -->
+    <div class="container search-results">
+        <h2>نتائج البحث</h2>
+
+        <!-- Placeholder for search results -->
         <div id="results">
-            <!-- النتائج ستظهر هنا -->
+            <p>لا توجد نتائج للبحث الذي أجريته. الرجاء المحاولة مرة أخرى بمصطلح مختلف.</p>
         </div>
-        <p id="no-results" class="text-danger" style="display: none;">لا توجد نتائج مطابقة لبحثك.</p>
     </div>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <!-- Footer -->
+    <footer class="text-center py-3">
         <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة الجزائري. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <script>
-        // محاكاة نتائج البحث (اختياري)
-        const mockData = [
-            { title: 'حكم الصلاة في المسجد مع وجود الوباء', link: '/fatwa/1' },
-            { title: 'حكم التعامل بالعملات الرقمية', link: '/fatwa/2' }
-        ];
-
-        // استرجاع استعلام البحث من الرابط
-        const urlParams = new URLSearchParams(window.location.search);
-        const query = urlParams.get('query') || '';
-
-        // عرض استعلام البحث
-        document.getElementById('search-query').textContent = query;
-
-        // البحث في البيانات وعرض النتائج
-        const results = mockData.filter(item => item.title.includes(query));
-        const resultsDiv = document.getElementById('results');
-        const noResults = document.getElementById('no-results');
-
-        if (results.length > 0) {
-            results.forEach(item => {
-                const resultDiv = document.createElement('div');
-                resultDiv.classList.add('my-3');
-                resultDiv.innerHTML = `<a href="${item.link}" class="btn btn-link">${item.title}</a>`;
-                resultsDiv.appendChild(resultDiv);
-            });
-        } else {
-            noResults.style.display = 'block';
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
