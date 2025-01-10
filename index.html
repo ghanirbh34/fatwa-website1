@@ -106,15 +106,17 @@
 
         /* حيز البحث والتاريخ بجانب بعض */
         .search-bar-section {
-            padding: 5px;
-            margin: 10px 0;
+            padding: 10px 20px;
+            margin: 10px auto;
             background-color: #fff;
             border-radius: 8px;
             border: 2px solid gold; /* حدود ذهبية حول شريط البحث */
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px; /* مسافة بين التاريخ الميلادي وشريط البحث */
+            justify-content: center; /* توسيط العناصر */
+            align-items: center; /* توسيط العناصر عموديًا */
+            gap: 15px; /* مسافة بين التاريخين والشريط */
+            width: 80%; /* عرض الحيز بالكامل */
+            max-width: 800px; /* الحد الأقصى للعرض */
         }
 
         .search-bar-section input {
@@ -141,7 +143,7 @@
         <p style="font-size: 1.2rem; color: #343a40;">حفظه الله</p>
     </header>
 
-    <!-- شريط البحث والتاريخ جنباً إلى جنب -->
+    <!-- شريط البحث والتاريخ جنباً إلى جنب في المنتصف -->
     <div class="container search-bar-section">
         <!-- تاريخ اليوم الميلادي -->
         <div class="date-section" id="current-date" style="color: #343a40;"></div>
