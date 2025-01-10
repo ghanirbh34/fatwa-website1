@@ -17,16 +17,20 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
-            border: none; /* إزالة الحد الذهبي */
+            border: 3px solid gold; /* إضافة حدود ذهبية حول العنوان */
+            border-radius: 10px;
         }
         .search-bar {
             margin-top: 10px;
+            border: 3px solid gold; /* إضافة حدود ذهبية حول شريط البحث */
+            border-radius: 10px;
+            padding: 10px;
         }
         .search-bar input {
             border-radius: 20px;
             padding: 10px;
             font-size: 1rem;
-            border: 1px solid #ccc; /* تغيير الحدود إلى لون حيادي */
+            border: 1px solid #ccc; /* حدود خفيفة حول مدخل النص */
         }
         .search-bar button {
             background-color: #0d6efd; /* زر البحث الأزرق */
@@ -118,6 +122,28 @@
             <p>لا توجد محتويات حالياً.</p>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة الجزائري. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // تحديث التاريخ بشكل يومي
+        const dateElement = document.getElementById('date');
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('ar-SA', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        dateElement.textContent = formattedDate;
+    </script>
+</body>
+</html>
+
 
     <!-- Footer -->
     <footer>
