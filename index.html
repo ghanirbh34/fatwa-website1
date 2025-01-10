@@ -58,13 +58,24 @@
             background-color: #6610f2;
         }
 
-        .search-bar .date-container {
+        .info-icon {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30%;
-            font-size: 1.1rem;
-            text-align: left;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .info-icon button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .info-icon button:hover {
+            background-color: #6610f2;
         }
 
         .category-item {
@@ -107,15 +118,15 @@
     </header>
 
     <div class="container search-bar">
-        <div class="date-container">
-            <div id="current-day" style="font-size: 1.2rem; font-weight: bold;"></div>
-            <div id="current-date-hijri" style="font-size: 1.2rem;"></div>
-            <div id="current-date-miladi" style="font-size: 1.2rem;"></div>
-        </div>
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
+        <div class="info-icon">
+            <button class="btn" onclick="redirectTo('info.html')">
+                <i class="bi bi-info-circle"></i> معلومات
+            </button>
+        </div>
     </div>
 
     <div class="container text-center">
@@ -153,27 +164,9 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"></script>
 
     <script>
-        function updateDate() {
-            const currentDateMiladi = new Date();
-            const dayOfWeek = currentDateMiladi.toLocaleDateString('ar-EG', { weekday: 'long' });
-            const miladiDate = currentDateMiladi.toLocaleDateString('ar-EG', {
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric'
-            });
-            const currentDateHijri = new Date().toLocaleDateString('ar-SA-u-ca-islamic', {
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric'
-            });
-            document.getElementById('current-day').textContent = dayOfWeek;
-            document.getElementById('current-date-hijri').textContent = `التاريخ الهجري: ${currentDateHijri}`;
-            document.getElementById('current-date-miladi').textContent = `التاريخ الميلادي: ${miladiDate}`;
-        }
-        updateDate();
-
         function handleSearch(event) {
             event.preventDefault();
             const query = document.getElementById('search-input').value;
@@ -191,8 +184,3 @@
     </script>
 </body>
 </html>
-
-    </script>
-</body>
-</html>
-
