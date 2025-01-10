@@ -14,13 +14,11 @@
         }
         header {
             background-color: #f1f1f1;
-            border: 2px solid gold;
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
         }
         .search-bar {
-            border: 2px solid gold;
             border-radius: 20px;
             padding: 10px;
         }
@@ -32,7 +30,7 @@
         }
         .category-item {
             background-color: #fff;
-            border: 2px solid gold;
+            border: 2px solid #0d6efd; /* حدود زرقاء */
             border-radius: 10px;
             padding: 15px;
             text-align: center;
@@ -101,7 +99,7 @@
 
     <!-- شريط البحث -->
     <div class="container d-flex justify-content-between align-items-center mb-4">
-        <div id="current-date" class="border border-gold p-2 rounded" style="color: #343a40;"></div>
+        <div id="current-date" class="border p-2 rounded" style="color: #343a40;"></div>
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
@@ -111,13 +109,13 @@
     <!-- التصنيفات -->
     <div class="categories">
         <div class="category-item">
-            <a href="/fatwas">الفتاوى</a> <!-- الرابط الخاص بالفتاوى -->
+            <a href="fatwas.html">الفتاوى</a> <!-- الرابط الخاص بالفتاوى -->
         </div>
         <div class="category-item">
-            <a href="/lectures">الدروس</a> <!-- الرابط الخاص بالدروس -->
+            <a href="lectures.html">الدروس</a> <!-- الرابط الخاص بالدروس -->
         </div>
         <div class="category-item">
-            <a href="/friday-sermons">خطب الجمعة</a> <!-- الرابط الخاص بخطب الجمعة -->
+            <a href="friday-sermons.html">خطب الجمعة</a> <!-- الرابط الخاص بخطب الجمعة -->
         </div>
     </div>
 
@@ -172,4 +170,3 @@
     </script>
 </body>
 </html>
-
