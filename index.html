@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -18,11 +17,31 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
+            border: none; /* إزالة الحد الذهبي */
         }
         .search-bar {
+            margin-top: 10px;
+        }
+        .search-bar input {
             border-radius: 20px;
             padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc; /* تغيير الحدود إلى لون حيادي */
         }
+        .search-bar button {
+            background-color: #0d6efd; /* زر البحث الأزرق */
+            color: white;
+            border-radius: 15px;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #6610f2; /* أزرق غامق عند التمرير */
+        }
+
         .categories {
             display: flex;
             justify-content: center;
@@ -31,7 +50,7 @@
         }
         .category-item {
             background-color: #fff;
-            border: 2px solid #0d6efd; /* حدود زرقاء */
+            border: 2px solid #0d6efd; /* حدود زرقاء حول الأزرار */
             border-radius: 10px;
             padding: 15px;
             text-align: center;
@@ -42,9 +61,81 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        /* زر البحث الزرقاء */
-        .search-bar input {
-            border-radius: 15px;
+        .category-item a {
+            display: block;
+            background-color: #0d6efd; /* زر أزرق */
+            color: white;
             padding: 8px;
-            font-size: 1rem;
-       
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .category-item a:hover {
+            background-color: #6610f2; /* أزرق غامق عند المرور */
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 style="font-family: 'Times New Roman', serif;">منبر الشيخ عبد الحميد بوطاعة</h1>
+        <p>حفظه الله</p>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="search-bar d-flex justify-content-between">
+            <form class="d-flex w-50">
+                <input class="form-control me-2" type="search" placeholder="ابحث..." aria-label="Search">
+                <button class="btn" type="submit">بحث</button>
+            </form>
+            <span id="date" class="d-flex align-items-center"></span>
+        </div>
+
+        <div class="categories">
+            <div class="category-item">
+                <a href="#">الفتاوى</a>
+            </div>
+            <div class="category-item">
+                <a href="#">الدروس</a>
+            </div>
+            <div class="category-item">
+                <a href="#">خطب الجمعة</a>
+            </div>
+        </div>
+
+        <!-- Latest Content -->
+        <div id="latest-content" class="container">
+            <h2>أحدث المحتويات</h2>
+            <p>لا توجد محتويات حالياً.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة الجزائري. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // تحديث التاريخ بشكل يومي
+        const dateElement = document.getElementById('date');
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('ar-SA', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        dateElement.textContent = formattedDate;
+    </script>
+</body>
+</html>
