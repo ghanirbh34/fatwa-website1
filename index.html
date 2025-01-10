@@ -1,129 +1,115 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    
+    <!-- رابط CSS الخاص بـ Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Amiri', serif;
             background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
         }
-
         header {
-            background-color: #0d6efd;
-            color: #fff;
-            text-align: center;
+            background-color: #f1f1f1;
+            border: 2px solid gold;
             padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar {
             border: 2px solid gold;
-            border-radius: 10px;
-            margin: 10px;
-        }
-
-        .header-title {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .sub-title {
-            font-size: 1.5rem;
-        }
-
-        .search-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-radius: 20px;
             padding: 10px;
-            border: 2px solid gold;
-            margin: 10px;
-            border-radius: 10px;
         }
-
         .categories {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin: 20px 0;
         }
-
-        .category-btn {
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 20px;
-            background-color: #6610f2;
-            color: #fff;
-            border: none;
-            transition: transform 0.3s;
-        }
-
-        .category-btn:hover {
-            transform: scale(1.1);
-            background-color: #520dc2;
-        }
-
-        .content-section {
-            margin: 20px;
+        .category-item {
+            background-color: #fff;
+            border: 2px solid gold;
+            border-radius: 10px;
+            padding: 15px;
             text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
         }
-
+        .category-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
         footer {
             background-color: #212529;
             color: white;
-            padding: 15px;
             text-align: center;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .header-title {
-                font-size: 2.5rem;
-            }
-
-            .sub-title {
-                font-size: 1.2rem;
-            }
-
-            .search-container {
-                flex-direction: column;
-            }
-
-            .categories {
-                flex-direction: column;
-                gap: 10px;
-            }
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <!-- الهيدر -->
+    <header>
+        <h1 style="font-family: 'Diwani Letter', cursive; font-size: 3rem; color: #6c757d;">منبر الشيخ عبد الحميد بوطاعة</h1>
+        <p style="font-size: 1.2rem; color: #343a40;">حفظه الله</p>
+    </header>
 
-<header>
-    <h1 class="header-title">منبر الشيخ عبد الحميد بوطاعة</h1>
-    <p class="sub-title">حفظه الله</p>
-</header>
+    <!-- شريط البحث -->
+    <div class="container d-flex justify-content-between align-items-center mb-4">
+        <div id="current-date" class="border border-gold p-2 rounded" style="color: #343a40;"></div>
+        <form class="search-bar">
+            <input class="form-control" type="search" placeholder="ابحث هنا..." aria-label="Search">
+        </form>
+    </div>
 
-<div class="search-container">
-    <input type="text" class="form-control w-50" placeholder="ابحث هنا...">
-    <p class="text-end">📅 10 يناير 2025</p>
-</div>
+    <!-- التصنيفات -->
+    <div class="categories">
+        <div class="category-item">
+            <h3>الفتاوى</h3>
+        </div>
+        <div class="category-item">
+            <h3>الدروس</h3>
+        </div>
+        <div class="category-item">
+            <h3>خطب الجمعة</h3>
+        </div>
+    </div>
 
-<div class="categories">
-    <button class="category-btn">فتاوى</button>
-    <button class="category-btn">دروس</button>
-    <button class="category-btn">خطب جمعة</button>
-</div>
+    <!-- أحدث المحتويات -->
+    <div class="container">
+        <h2>أحدث المحتويات</h2>
+        <p>لا توجد محتويات حالياً.</p>
+    </div>
 
-<div class="content-section">
-    <h3>أحدث المحتويات</h3>
-    <p>🚫 لا توجد محتويات حاليًا.</p>
-</div>
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة. جميع الحقوق محفوظة.</p>
+    </footer>
 
-<footer>
-    <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة. جميع الحقوق محفوظة.</p>
-</footer>
+    <!-- رابط JavaScript الخاص بـ Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
+    <!-- كود تحديث التاريخ -->
+    <script>
+        function updateDate() {
+            const currentDate = new Date();
+            document.getElementById('current-date').textContent = currentDate.toLocaleDateString('ar-EG', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
+        updateDate();
+
+        // تحديث التاريخ كل ساعة
+        setInterval(updateDate, 3600000);
+    </script>
 </body>
 </html>
