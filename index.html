@@ -17,20 +17,34 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
-            border: 3px solid gold; /* إضافة حدود ذهبية حول العنوان */
+            border: 3px solid gold; /* حدود ذهبية حول العنوان */
             border-radius: 10px;
+            font-family: 'Cursive', sans-serif; /* استخدام خط زخرفي */
+        }
+        header h1 {
+            font-family: 'Times New Roman', serif; /* خط ديواني أو خط زخرفي */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* إضافة تأثير الظل للنص */
+            color: #6610f2;
+        }
+        header p {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            color: #0d6efd;
+            font-weight: bold;
         }
         .search-bar {
             margin-top: 10px;
-            border: 3px solid gold; /* إضافة حدود ذهبية حول شريط البحث */
+            border: 3px solid gold; /* حدود ذهبية حول شريط البحث */
             border-radius: 10px;
             padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير ظل على شريط البحث */
         }
         .search-bar input {
             border-radius: 20px;
             padding: 10px;
             font-size: 1rem;
             border: 1px solid #ccc; /* حدود خفيفة حول مدخل النص */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة تأثير الظل */
         }
         .search-bar button {
             background-color: #0d6efd; /* زر البحث الأزرق */
@@ -44,6 +58,7 @@
         }
         .search-bar button:hover {
             background-color: #6610f2; /* أزرق غامق عند التمرير */
+            transform: scale(1.05); /* تكبير الزر عند التمرير */
         }
 
         .categories {
@@ -59,10 +74,11 @@
             padding: 15px;
             text-align: center;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة تأثير ظل على الأزرار */
         }
         .category-item:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* تأثير الظل عند التمرير */
         }
 
         .category-item a {
@@ -73,9 +89,11 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            font-family: 'Cursive', sans-serif; /* استخدام خط زخرفي */
         }
         .category-item a:hover {
             background-color: #6610f2; /* أزرق غامق عند المرور */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* تأثير الظل على النص */
         }
 
         footer {
@@ -84,13 +102,35 @@
             text-align: center;
             padding: 10px;
             margin-top: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .date {
+            border: 3px solid gold; /* حدود ذهبية حول التاريخ */
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: bold;
+            margin-top: 20px;
+            font-family: 'Cursive', sans-serif;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* تأثير ظل */
+        }
+
+        /* تأثير الزخرفة على النصوص */
+        .decorative-text {
+            font-family: 'Cursive', sans-serif;
+            color: #0d6efd;
+            text-decoration: underline;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1 style="font-family: 'Times New Roman', serif;">منبر الشيخ عبد الحميد بوطاعة</h1>
+        <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
         <p>حفظه الله</p>
     </header>
 
@@ -101,7 +141,7 @@
                 <input class="form-control me-2" type="search" placeholder="ابحث..." aria-label="Search">
                 <button class="btn" type="submit">بحث</button>
             </form>
-            <span id="date" class="d-flex align-items-center"></span>
+            <span id="date" class="date d-flex align-items-center"></span>
         </div>
 
         <div class="categories">
@@ -118,7 +158,7 @@
 
         <!-- Latest Content -->
         <div id="latest-content" class="container">
-            <h2>أحدث المحتويات</h2>
+            <h2 class="decorative-text">أحدث المحتويات</h2>
             <p>لا توجد محتويات حالياً.</p>
         </div>
     </div>
