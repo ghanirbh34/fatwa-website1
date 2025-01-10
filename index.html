@@ -110,11 +110,13 @@
             background-color: #fff;
             border-radius: 8px;
             border: 2px solid gold; /* حدود ذهبية حول شريط البحث */
+            display: flex;
+            align-items: center; /* جعل العناصر داخل الحيز في صف واحد */
+            gap: 10px; /* مسافة بين التاريخ وشريط البحث */
         }
 
-        .search-bar-section {
-            display: flex;
-            justify-content: center;
+        .search-bar-section input {
+            width: 180px; /* تحديد عرض شريط البحث */
         }
 
     </style>
@@ -126,13 +128,12 @@
         <p style="font-size: 1.2rem; color: #343a40;">حفظه الله</p>
     </header>
 
-    <!-- تاريخ اليوم -->
-    <div class="container date-section">
-        <div id="current-date" style="color: #343a40;"></div>
-    </div>
-
-    <!-- شريط البحث -->
+    <!-- شريط البحث والتاريخ جنباً إلى جنب -->
     <div class="container search-bar-section">
+        <!-- تاريخ اليوم -->
+        <div class="date-section" id="current-date" style="color: #343a40;"></div>
+
+        <!-- شريط البحث -->
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
@@ -203,3 +204,4 @@
     </script>
 </body>
 </html>
+
