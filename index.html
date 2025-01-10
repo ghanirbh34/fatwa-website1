@@ -45,19 +45,17 @@
         }
 
         .search-bar button {
-            background-color: #6c757d;
+            background-color: #0d6efd;
             color: white;
             padding: 8px 15px;
             border: none;
             font-size: 1rem;
             cursor: pointer;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            border-radius: 10px;
         }
 
         .search-bar button:hover {
-            background-color: #5a6268;
+            background-color: #6610f2;
         }
 
         .info-icon {
@@ -80,16 +78,6 @@
             background-color: #6610f2;
         }
 
-        .category-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .category-column {
-            width: 48%;
-        }
-
         .category-item {
             background-color: #fff;
             border: 2px solid #0d6efd;
@@ -98,36 +86,12 @@
             text-align: center;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s;
             background-color: #e9f7fe;
-            margin: 10px 0;
+            margin: 10px;
         }
 
         .category-item:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .category-item:nth-child(1) {
-            background-color: #007bff;
-        }
-
-        .category-item:nth-child(2) {
-            background-color: #17a2b8;
-        }
-
-        .category-item:nth-child(3) {
-            background-color: #28a745;
-        }
-
-        .category-item:nth-child(4) {
-            background-color: #007bff;
-        }
-
-        .category-item:nth-child(5) {
-            background-color: #17a2b8;
-        }
-
-        .category-item:nth-child(6) {
-            background-color: #28a745;
         }
 
         footer {
@@ -166,28 +130,24 @@
         </div>
     </div>
 
-    <div class="container category-container">
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
-            </div>
+    <div class="container text-center">
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
         </div>
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
-            </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
         </div>
     </div>
 
