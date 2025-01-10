@@ -88,6 +88,22 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        .date-section {
+            text-align: left;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .search-bar-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -97,9 +113,13 @@
         <p style="font-size: 1.2rem; color: #343a40;">حفظه الله</p>
     </header>
 
+    <!-- تاريخ اليوم -->
+    <div class="container date-section">
+        <div id="current-date" style="color: #343a40;"></div>
+    </div>
+
     <!-- شريط البحث -->
-    <div class="container d-flex justify-content-between align-items-center mb-4">
-        <div id="current-date" class="border p-2 rounded" style="color: #343a40;"></div>
+    <div class="container search-bar-section">
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
