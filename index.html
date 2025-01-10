@@ -17,7 +17,7 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
-            border: 2px solid gold; /* حدود ذهبية حول العنوان */
+            border: 3px solid gold; /* حدود ذهبية حول العنوان */
             border-radius: 10px;
         }
         .search-bar {
@@ -96,7 +96,7 @@
             margin: 10px 0;
             background-color: #fff;
             border-radius: 8px;
-            border: 2px solid gold; /* حدود ذهبية حول التاريخ */
+            border: 3px solid gold; /* حدود ذهبية حول التاريخ */
         }
 
         .search-bar-section {
@@ -104,7 +104,7 @@
             margin: 10px 0;
             background-color: #fff;
             border-radius: 8px;
-            border: 2px solid gold; /* حدود ذهبية حول شريط البحث */
+            border: 3px solid gold; /* حدود ذهبية حول شريط البحث */
         }
 
         .search-bar-section {
@@ -164,38 +164,4 @@
     </footer>
 
     <!-- رابط JavaScript الخاص بـ Bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-    <!-- كود تحديث التاريخ -->
-    <script>
-        function updateDate() {
-            const currentDate = new Date();
-            document.getElementById('current-date').textContent = currentDate.toLocaleDateString('ar-EG', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-        }
-
-        // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
-        updateDate();
-
-        // التعامل مع البحث
-        function handleSearch(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على زر البحث
-            const query = document.getElementById('search-input').value;
-
-            // تحقق من إذا كان هناك محتوى يتطابق مع البحث
-            if (query.trim() === '') {
-                document.getElementById('no-content-message').style.display = 'block';
-            } else {
-                document.getElementById('no-content-message').style.display = 'none';
-                alert(`تم البحث عن: ${query}`);
-                // يمكنك إضافة منطق البحث الفعلي هنا
-            }
-        }
-    </script>
-</body>
-</html>
-
+    <script src
