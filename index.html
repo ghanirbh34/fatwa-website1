@@ -61,9 +61,11 @@
 
         .search-bar .date-container {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             width: 30%;
             font-size: 1.1rem;
+            text-align: left;
         }
 
         .category-item {
@@ -109,9 +111,9 @@
     <!-- شريط البحث والتاريخ -->
     <div class="container search-bar">
         <div class="date-container">
-            <div id="current-day" style="text-align: left; font-size: 1rem;"></div>
-            <div id="current-date-hijri" style="text-align: left; font-size: 1.2rem;"></div>
-            <div id="current-date-miladi" style="text-align: left; font-size: 1.2rem;"></div>
+            <div id="current-day" style="font-size: 1.2rem; font-weight: bold;"></div>
+            <div id="current-date-hijri" style="font-size: 1.2rem;"></div>
+            <div id="current-date-miladi" style="font-size: 1.2rem;"></div>
         </div>
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
@@ -173,8 +175,8 @@
 
             // تعيين التواريخ في العناصر
             document.getElementById('current-day').textContent = dayOfWeek; // يوم الأسبوع
-            document.getElementById('current-date-hijri').textContent = 'التاريخ الهجري: ' + currentDateHijri;
-            document.getElementById('current-date-miladi').textContent = 'التاريخ الميلادي: ' + miladiDate;
+            document.getElementById('current-date-hijri').textContent = currentDateHijri;
+            document.getElementById('current-date-miladi').textContent = miladiDate;
         }
 
         // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
