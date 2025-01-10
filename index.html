@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #ffdd57;
+            background-color: #2c3e50; /* لون أزرق ليلي مائل إلى الرمادي */
             padding: 20px;
             text-align: center;
             border: 3px solid #f1c40f;
@@ -22,11 +22,11 @@
         header h1 {
             font-family: 'Diwani Letter', cursive;
             font-size: 3rem;
-            color: #343a40;
+            color: #ffffff; /* لون النص أبيض */
         }
         header p {
             font-size: 1.2rem;
-            color: #2c3e50;
+            color: #ecf0f1; /* لون النص فاتح */
         }
 
         .search-bar {
@@ -78,15 +78,24 @@
             background-color: #6610f2;
         }
 
+        .category-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .category-column {
+            width: 48%;
+        }
+
         .category-item {
-            background-color: #fff;
+            background: linear-gradient(to bottom, #e9f7fe, #2c3e50); /* تدرج لوني من الرمادي الفاتح إلى الغامق */
             border: 2px solid #0d6efd;
             border-radius: 10px;
             padding: 15px;
             text-align: center;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            background-color: #e9f7fe;
-            margin: 10px;
+            margin: 10px 0;
         }
 
         .category-item:hover {
@@ -130,24 +139,28 @@
         </div>
     </div>
 
-    <div class="container text-center">
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
+    <div class="container category-container">
+        <div class="category-column">
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+            </div>
         </div>
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس</button>
-        </div>
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
-        </div>
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
-        </div>
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
-        </div>
-        <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
+        <div class="category-column">
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
+            </div>
         </div>
     </div>
 
