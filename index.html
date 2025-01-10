@@ -109,8 +109,9 @@
     <!-- شريط البحث والتاريخ -->
     <div class="container search-bar">
         <div class="date-container">
-            <div id="current-date-miladi"></div>
-            <div id="current-date-hijri"></div>
+            <div id="current-day" style="text-align: left; font-size: 1rem;"></div>
+            <div id="current-date-hijri" style="text-align: left; font-size: 1.2rem;"></div>
+            <div id="current-date-miladi" style="text-align: left; font-size: 1.2rem;"></div>
         </div>
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
@@ -155,21 +156,25 @@
         function updateDate() {
             // التاريخ الميلادي
             const currentDateMiladi = new Date();
-            document.getElementById('current-date-miladi').textContent = currentDateMiladi.toLocaleDateString('ar-EG', { 
-                weekday: 'long', 
+            const dayOfWeek = currentDateMiladi.toLocaleDateString('ar-EG', { weekday: 'long' }); // يوم الأسبوع
+
+            const miladiDate = currentDateMiladi.toLocaleDateString('ar-EG', { 
                 year: 'numeric', 
-                month: 'long', 
+                month: 'numeric', 
                 day: 'numeric' 
             });
 
             // التاريخ الهجري
             const currentDateHijri = new Date().toLocaleDateString('ar-SA-u-ca-islamic', { 
-                weekday: 'long', 
                 year: 'numeric', 
-                month: 'long', 
+                month: 'numeric', 
                 day: 'numeric' 
             });
-            document.getElementById('current-date-hijri').textContent = currentDateHijri;
+
+            // تعيين التواريخ في العناصر
+            document.getElementById('current-day').textContent = dayOfWeek; // يوم الأسبوع
+            document.getElementById('current-date-hijri').textContent = 'التاريخ الهجري: ' + currentDateHijri;
+            document.getElementById('current-date-miladi').textContent = 'التاريخ الميلادي: ' + miladiDate;
         }
 
         // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
