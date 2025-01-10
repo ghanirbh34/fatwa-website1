@@ -120,13 +120,13 @@
 
     <div class="container text-center">
         <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa-sheikh-boutaah.html')">الفتاوى</button>
+            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">الفتاوى</button>
         </div>
         <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('lessons-sheikh-boutaah.html')">الدروس</button>
+            <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">الدروس</button>
         </div>
         <div class="category-item">
-            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons-sheikh-boutaah.html')">خطب الجمعة</button>
+            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
         </div>
     </div>
 
@@ -166,8 +166,18 @@
         updateDate();
 
         function handleSearch(event) {
-            event.preventDefault(
+            event.preventDefault();
+            const query = document.getElementById('search-input').value;
+            if (query.trim() === '') {
+                document.getElementById('no-content-message').style.display = 'block';
+            } else {
+                document.getElementById('no-content-message').style.display = 'none';
+                alert(`تم البحث عن: ${query}`);
+            }
+        }
 
+        function redirectTo(url) {
+            window.location.href = url;
         }
     </script>
 </body>
