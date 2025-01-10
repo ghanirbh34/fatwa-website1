@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطب الجمعة للشيخ عبد الحميد بوطاعة</title>
+    <title>معلومات عن الموقع</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #2c3e50; /* لون أزرق ليلي مائل إلى الرمادي */
+            background: linear-gradient(to right, #2c3e50, #ecf0f1);
             padding: 20px;
             text-align: center;
             border: 3px solid #f1c40f;
@@ -22,11 +22,11 @@
         header h1 {
             font-family: 'Diwani Letter', cursive;
             font-size: 3rem;
-            color: #ffffff; /* لون النص أبيض */
+            color: #ffffff;
         }
         header p {
             font-size: 1.2rem;
-            color: #ecf0f1; /* لون النص فاتح */
+            color: #ffffff;
         }
         .center-button {
             text-align: center;
@@ -44,22 +44,22 @@
         .center-button button:hover {
             background-color: #6610f2;
         }
-        .sermon-list {
+        .info-section {
             text-align: center;
             margin-top: 20px;
         }
-        .sermon-list h2 {
-            background-color: #2c3e50; /* لون أزرق ليلي مائل إلى الرمادي */
-            color: #ffffff; /* لون النص أبيض */
+        .info-section h2, .info-section h3 {
+            background: linear-gradient(to right, #2c3e50, #ecf0f1);
+            color: #ffffff;
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        .sermon-list ul {
+        .info-section ul {
             list-style-type: none;
             padding: 0;
         }
-        .sermon-list ul li {
+        .info-section ul li {
             margin: 10px 0;
         }
         footer {
@@ -74,20 +74,22 @@
 <body>
 
     <header>
-        <h1>خطب الجمعة للشيخ عبد الحميد بوطاعة</h1>
-        <p>حفظه الله ورعاه</p>
+        <h1>معلومات عن الموقع</h1>
     </header>
 
     <div class="center-button">
         <button class="btn" onclick="redirectTo('index.html')">الرئيسية</button>
     </div>
 
-    <div class="sermon-list">
-        <h2>قائمة خطب الجمعة</h2>
+    <div class="info-section">
+        <h2>عن الموقع</h2>
+        <p>منبر الشيخ عبد الحميد بوطاعة، منصة تهدف إلى نشر العلم الشرعي وفق المنهج السلفي. تحتوي على خطب جمعة، دروس ومواعظ مفيدة، وفتاوى فقهية في مختلف المواضيع.</p>
+        <h3>ملكية الموقع</h3>
         <ul>
-            <li>خطبة 1</li>
-            <li>خطبة 2</li>
-            <li>خطبة 3</li>
+            <li>روابح عبد الغني</li>
+            <li>روابح عبد المؤمن</li>
+            <li>روابح عبد الرحيم</li>
+            <li>روابح عبد الرحمان</li>
         </ul>
     </div>
 
