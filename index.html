@@ -84,6 +84,12 @@
             padding: 10px;
             margin-top: 20px;
         }
+        .no-content {
+            font-size: 1.5rem;
+            color: #dc3545; /* لون أحمر للتنبيه */
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -96,8 +102,8 @@
     <!-- شريط البحث -->
     <div class="container d-flex justify-content-between align-items-center mb-4">
         <div id="current-date" class="border border-gold p-2 rounded" style="color: #343a40;"></div>
-        <form class="search-bar d-flex">
-            <input class="form-control" type="search" placeholder="ابحث هنا..." aria-label="Search">
+        <form class="search-bar d-flex" onsubmit="handleSearch(event)">
+            <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
     </div>
@@ -119,6 +125,11 @@
     <div class="container">
         <h2>أحدث المحتويات</h2>
         <p>لا توجد محتويات حالياً.</p>
+    </div>
+
+    <!-- رسالة لا توجد نتائج -->
+    <div id="no-content-message" class="no-content" style="display: none;">
+        🚫 لا يوجد محتوى لعرضه حالياً.
     </div>
 
     <!-- الفوتر -->
@@ -143,7 +154,21 @@
 
         // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
         updateDate();
+
+        // التعامل مع البحث
+        function handleSearch(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على زر البحث
+            const query = document.getElementById('search-input').value;
+
+            // تحقق من إذا كان هناك محتوى يتطابق مع البحث
+            if (query.trim() === '') {
+                document.getElementById('no-content-message').style.display = 'block';
+            } else {
+                document.getElementById('no-content-message').style.display = 'none';
+                alert(`تم البحث عن: ${query}`);
+                // يمكنك إضافة منطق البحث الفعلي هنا
+            }
+        }
     </script>
 </body>
 </html>
-
