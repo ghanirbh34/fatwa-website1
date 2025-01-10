@@ -23,7 +23,7 @@
         .search-bar {
             border-radius: 10px;
             padding: 5px;
-            width: 180px; /* تصغير عرض شريط البحث */
+            width: 150px; /* تصغير عرض شريط البحث */
         }
         .categories {
             display: flex;
@@ -104,6 +104,7 @@
             text-align: center;
         }
 
+        /* حيز البحث والتاريخ بجانب بعض */
         .search-bar-section {
             padding: 5px;
             margin: 10px 0;
@@ -116,7 +117,18 @@
         }
 
         .search-bar-section input {
-            width: 180px; /* تحديد عرض شريط البحث */
+            width: 150px; /* تحديد عرض شريط البحث */
+        }
+
+        /* حيز التاريخ الهجري */
+        .hijri-date {
+            background-color: #fff;
+            border-radius: 8px;
+            border: 2px solid gold;
+            padding: 5px;
+            font-size: 0.9rem;
+            width: 130px; /* عرض حيز التاريخ الهجري */
+            text-align: center;
         }
 
     </style>
@@ -130,7 +142,7 @@
 
     <!-- شريط البحث والتاريخ جنباً إلى جنب -->
     <div class="container search-bar-section">
-        <!-- تاريخ اليوم -->
+        <!-- تاريخ اليوم الميلادي -->
         <div class="date-section" id="current-date" style="color: #343a40;"></div>
 
         <!-- شريط البحث -->
@@ -138,6 +150,9 @@
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
+
+        <!-- تاريخ هجري -->
+        <div class="hijri-date" id="hijri-date"></div>
     </div>
 
     <!-- التصنيفات -->
@@ -184,8 +199,22 @@
             });
         }
 
-        // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
+        // تحديث التاريخ الميلادي
         updateDate();
+
+        // الحصول على التاريخ الهجري باستخدام واجهة JavaScript
+        function getHijriDate() {
+            const hijriDate = new Date().toLocaleDateString('ar-SA-u-ca-islamic', {
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            });
+            document.getElementById('hijri-date').textContent = hijriDate;
+        }
+
+        // استدعاء الوظيفة للحصول على التاريخ الهجري
+        getHijriDate();
 
         // التعامل مع البحث
         function handleSearch(event) {
@@ -204,4 +233,3 @@
     </script>
 </body>
 </html>
-
