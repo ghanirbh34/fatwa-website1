@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
-    
-    <!-- رابط CSS الخاص بـ Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -15,33 +13,59 @@
             padding: 0;
         }
         header {
-            background-color: #ffdd57; /* لون ذهبي فاتح */
+            background-color: #ffdd57;
             padding: 20px;
-            margin-bottom: 20px;
             text-align: center;
-            border: 3px solid #f1c40f; /* حدود ذهبية حول العنوان */
+            border: 3px solid #f1c40f;
             border-radius: 10px;
         }
         header h1 {
             font-family: 'Diwani Letter', cursive;
             font-size: 3rem;
-            color: #343a40; /* لون داكن */
+            color: #343a40;
         }
         header p {
             font-size: 1.2rem;
-            color: #2c3e50; /* لون داكن أكثر */
+            color: #2c3e50;
         }
+
+        /* تخصيص شريط البحث والتاريخ */
         .search-bar {
-            border-radius: 10px;
-            padding: 5px;
-            width: 150px;
-        }
-        .categories {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
         }
+
+        .search-bar input {
+            width: 60%;
+            padding: 8px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6610f2;
+        }
+
+        .search-bar .date-container {
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            font-size: 1.1rem;
+        }
+
         .category-item {
             background-color: #fff;
             border: 2px solid #0d6efd;
@@ -50,38 +74,12 @@
             text-align: center;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s;
             background-color: #e9f7fe;
+            margin: 10px;
         }
+
         .category-item:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .search-bar-section {
-            padding: 15px 25px;
-            margin: 10px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            border: 2px solid #f39c12; /* حدود برتقالية */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-            width: 80%;
-            max-width: 900px;
-        }
-
-        .search-bar-section input {
-            width: 150px;
-        }
-
-        .date-section, .hijri-date {
-            background-color: #fff;
-            border-radius: 8px;
-            border: 2px solid #f39c12;
-            padding: 5px;
-            font-size: 0.9rem;
-            width: 130px;
-            text-align: center;
         }
 
         footer {
@@ -94,106 +92,42 @@
 
         .no-content {
             font-size: 1.5rem;
-            color: #e74c3c; /* لون أحمر */
+            color: #dc3545;
             text-align: center;
             margin-top: 20px;
-        }
-
-        /* تنسيق الصفحة للجوال */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-
-            .search-bar-section {
-                flex-direction: column;
-                gap: 15px;
-                width: 90%;
-                padding: 15px;
-            }
-
-            .date-section, .hijri-date {
-                width: 100%;
-            }
-
-            .categories {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .category-item {
-                padding: 10px;
-            }
-
-            .no-content {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* تنسيق الصفحة للجوال الأصغر */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            header p {
-                font-size: 0.9rem;
-            }
-
-            .search-bar-section {
-                width: 95%;
-                gap: 10px;
-            }
-
-            .categories {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .category-item {
-                padding: 8px;
-            }
-
-            .no-content {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
 <body>
+
     <!-- الهيدر -->
     <header>
         <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
         <p>حفظه الله</p>
     </header>
 
-    <!-- شريط البحث والتاريخ جنباً إلى جنب في المنتصف -->
-    <div class="container search-bar-section">
-        <!-- تاريخ اليوم الميلادي -->
-        <div class="date-section" id="current-date" style="color: #343a40;"></div>
-
-        <!-- شريط البحث -->
+    <!-- شريط البحث والتاريخ -->
+    <div class="container search-bar">
+        <div class="date-container">
+            <div id="current-date-miladi"></div>
+            <div id="current-date-hijri"></div>
+        </div>
         <form class="search-bar d-flex" onsubmit="handleSearch(event)">
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
-
-        <!-- تاريخ هجري -->
-        <div class="hijri-date" id="hijri-date"></div>
     </div>
 
     <!-- التصنيفات -->
-    <div class="categories">
+    <div class="container text-center">
         <div class="category-item">
-            <a href="fatwa-sheikh-boutaah.html">الفتاوى</a>
+            <a href="fatwa-sheikh-boutaah.html" class="btn btn-primary w-100">الفتاوى</a>
         </div>
         <div class="category-item">
-            <a href="lessons-sheikh-boutaah.html">الدروس</a>
+            <a href="lessons-sheikh-boutaah.html" class="btn btn-primary w-100">الدروس</a>
         </div>
         <div class="category-item">
-            <a href="friday-sermons-sheikh-boutaah.html">خطب الجمعة</a>
+            <a href="friday-sermons-sheikh-boutaah.html" class="btn btn-primary w-100">خطب الجمعة</a>
         </div>
     </div>
 
@@ -216,34 +150,30 @@
     <!-- رابط JavaScript الخاص بـ Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-    <!-- كود تحديث التاريخ -->
+    <!-- كود JavaScript لتحديث التاريخ الميلادي والهجري -->
     <script>
         function updateDate() {
-            const currentDate = new Date();
-            document.getElementById('current-date').textContent = currentDate.toLocaleDateString('ar-EG', { 
+            // التاريخ الميلادي
+            const currentDateMiladi = new Date();
+            document.getElementById('current-date-miladi').textContent = currentDateMiladi.toLocaleDateString('ar-EG', { 
                 weekday: 'long', 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
             });
-        }
 
-        // تحديث التاريخ الميلادي
-        updateDate();
-
-        // الحصول على التاريخ الهجري باستخدام واجهة JavaScript
-        function getHijriDate() {
-            const hijriDate = new Date().toLocaleDateString('ar-SA-u-ca-islamic', {
+            // التاريخ الهجري
+            const currentDateHijri = new Date().toLocaleDateString('ar-SA-u-ca-islamic', { 
                 weekday: 'long', 
                 year: 'numeric', 
                 month: 'long', 
-                day: 'numeric'
+                day: 'numeric' 
             });
-            document.getElementById('hijri-date').textContent = hijriDate;
+            document.getElementById('current-date-hijri').textContent = currentDateHijri;
         }
 
-        // استدعاء الوظيفة للحصول على التاريخ الهجري
-        getHijriDate();
+        // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
+        updateDate();
 
         // التعامل مع البحث
         function handleSearch(event) {
@@ -251,7 +181,13 @@
             const query = document.getElementById('search-input').value;
 
             // تحقق من إذا كان هناك محتوى يتطابق مع البحث
-            // تنفيذ منطق البحث هنا
+            if (query.trim() === '') {
+                document.getElementById('no-content-message').style.display = 'block';
+            } else {
+                document.getElementById('no-content-message').style.display = 'none';
+                alert(`تم البحث عن: ${query}`);
+                // يمكنك إضافة منطق البحث الفعلي هنا
+            }
         }
     </script>
 </body>
