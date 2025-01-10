@@ -11,6 +11,8 @@
         body {
             background-color: #f8f9fa;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         header {
             background-color: #f1f1f1;
@@ -134,6 +136,68 @@
             text-align: center;
         }
 
+        /* تنسيق الصفحة للجوال */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem; /* تقليل حجم العنوان */
+            }
+            header p {
+                font-size: 1rem; /* تقليل حجم النص تحت العنوان */
+            }
+
+            .search-bar-section {
+                flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+                gap: 15px; /* تقليل المسافة بين العناصر */
+                width: 90%; /* توسيع العرض ليشمل 90% من الشاشة */
+                padding: 15px; /* زيادة الحشو لراحة العين */
+            }
+
+            .date-section,
+            .hijri-date {
+                width: 100%; /* زيادة عرض التاريخ ليشمل كامل الحيز */
+            }
+
+            .categories {
+                flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+                gap: 10px; /* زيادة المسافة بين العناصر */
+            }
+
+            .category-item {
+                padding: 10px; /* تقليل الحشو ليتناسب مع المساحة الصغيرة */
+            }
+
+            .no-content {
+                font-size: 1.2rem; /* تقليل حجم النص في الرسالة */
+            }
+        }
+
+        /* تنسيق الصفحة للجوال الأصغر */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem; /* تقليل حجم العنوان أكثر */
+            }
+            header p {
+                font-size: 0.9rem; /* تقليل حجم النص أكثر */
+            }
+
+            .search-bar-section {
+                width: 95%; /* توسيع العرض ليشمل 95% من الشاشة */
+                gap: 10px; /* تقليل المسافة بين العناصر */
+            }
+
+            .categories {
+                flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+                gap: 8px; /* تقليل المسافة بين العناصر */
+            }
+
+            .category-item {
+                padding: 8px; /* تقليل الحشو أكثر */
+            }
+
+            .no-content {
+                font-size: 1rem; /* تقليل حجم النص في الرسالة */
+            }
+        }
     </style>
 </head>
 <body>
@@ -200,34 +264,3 @@
                 month: 'long', 
                 day: 'numeric' 
             });
-        }
-
-        // تحديث التاريخ الميلادي
-        updateDate();
-
-        // الحصول على التاريخ الهجري باستخدام واجهة JavaScript
-        function getHijriDate() {
-            const hijriDate = new Date().toLocaleDateString('ar-SA-u-ca-islamic', {
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric'
-            });
-            document.getElementById('hijri-date').textContent = hijriDate;
-        }
-
-        // استدعاء الوظيفة للحصول على التاريخ الهجري
-        getHijriDate();
-
-        // التعامل مع البحث
-        function handleSearch(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على زر البحث
-            const query = document.getElementById('search-input').value;
-
-            // تحقق من إذا كان هناك محتوى يتطابق مع البحث
-            if (query.trim() === '') {
-                document.getElementById('no-content-message').style.display = 'block';
-            } else {
-                document.getElementById('no-content-message').style.display = 'none';
-                alert(`تم البحث عن: ${query}`);
-                // يمكنك إضافة منطق البحث الفع
