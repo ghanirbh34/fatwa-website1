@@ -29,7 +29,6 @@
             color: #2c3e50;
         }
 
-        /* تخصيص شريط البحث والتاريخ */
         .search-bar {
             display: flex;
             justify-content: space-between;
@@ -102,13 +101,11 @@
 </head>
 <body>
 
-    <!-- الهيدر -->
     <header>
         <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
         <p>حفظه الله</p>
     </header>
 
-    <!-- شريط البحث والتاريخ -->
     <div class="container search-bar">
         <div class="date-container">
             <div id="current-day" style="font-size: 1.2rem; font-weight: bold;"></div>
@@ -121,7 +118,6 @@
         </form>
     </div>
 
-    <!-- التصنيفات -->
     <div class="container text-center">
         <div class="category-item">
             <a href="fatwa-sheikh-boutaah.html" class="btn btn-primary w-100">الفتاوى</a>
@@ -134,66 +130,49 @@
         </div>
     </div>
 
-    <!-- أحدث المحتويات -->
     <div class="container">
         <h2>أحدث المحتويات</h2>
         <p>لا توجد محتويات حالياً.</p>
     </div>
 
-    <!-- رسالة لا توجد نتائج -->
     <div id="no-content-message" class="no-content" style="display: none;">
         🚫 لا يوجد محتوى لعرضه حالياً.
     </div>
 
-    <!-- الفوتر -->
     <footer>
         <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- رابط JavaScript الخاص بـ Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-    <!-- كود JavaScript لتحديث التاريخ الميلادي والهجري -->
     <script>
         function updateDate() {
-            // التاريخ الميلادي
             const currentDateMiladi = new Date();
-            const dayOfWeek = currentDateMiladi.toLocaleDateString('ar-EG', { weekday: 'long' }); // يوم الأسبوع
-
-            const miladiDate = currentDateMiladi.toLocaleDateString('ar-EG', { 
-                year: 'numeric', 
-                month: 'numeric', 
-                day: 'numeric' 
+            const dayOfWeek = currentDateMiladi.toLocaleDateString('ar-EG', { weekday: 'long' });
+            const miladiDate = currentDateMiladi.toLocaleDateString('ar-EG', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
             });
-
-            // التاريخ الهجري
-            const currentDateHijri = new Date().toLocaleDateString('ar-SA-u-ca-islamic', { 
-                year: 'numeric', 
-                month: 'numeric', 
-                day: 'numeric' 
+            const currentDateHijri = new Date().toLocaleDateString('ar-SA-u-ca-islamic', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
             });
-
-            // تعيين التواريخ في العناصر
-            document.getElementById('current-day').textContent = dayOfWeek; // يوم الأسبوع
+            document.getElementById('current-day').textContent = dayOfWeek;
             document.getElementById('current-date-hijri').textContent = currentDateHijri;
             document.getElementById('current-date-miladi').textContent = miladiDate;
         }
-
-        // استدعاء الوظيفة لتحديث التاريخ عند تحميل الصفحة
         updateDate();
 
-        // التعامل مع البحث
         function handleSearch(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على زر البحث
+            event.preventDefault();
             const query = document.getElementById('search-input').value;
-
-            // تحقق من إذا كان هناك محتوى يتطابق مع البحث
             if (query.trim() === '') {
                 document.getElementById('no-content-message').style.display = 'block';
             } else {
                 document.getElementById('no-content-message').style.display = 'none';
                 alert(`تم البحث عن: ${query}`);
-                // يمكنك إضافة منطق البحث الفعلي هنا
             }
         }
     </script>
