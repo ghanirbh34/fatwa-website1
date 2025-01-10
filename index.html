@@ -42,6 +42,41 @@
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
+        /* زر البحث الزرقاء */
+        .search-bar input {
+            border-radius: 15px;
+            padding: 8px;
+            font-size: 1rem;
+        }
+        .search-bar button {
+            background-color: #0d6efd; /* زر أزرق */
+            color: white;
+            border-radius: 15px;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #6610f2; /* لون أزرق غامق عند المرور */
+        }
+
+        /* تصنيف الأزرار */
+        .category-item a {
+            display: block;
+            background-color: #0d6efd; /* زر أزرق */
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .category-item a:hover {
+            background-color: #6610f2; /* لون أزرق غامق عند المرور */
+        }
+
         footer {
             background-color: #212529;
             color: white;
@@ -61,21 +96,22 @@
     <!-- شريط البحث -->
     <div class="container d-flex justify-content-between align-items-center mb-4">
         <div id="current-date" class="border border-gold p-2 rounded" style="color: #343a40;"></div>
-        <form class="search-bar">
+        <form class="search-bar d-flex">
             <input class="form-control" type="search" placeholder="ابحث هنا..." aria-label="Search">
+            <button class="btn" type="submit">بحث</button>
         </form>
     </div>
 
     <!-- التصنيفات -->
     <div class="categories">
         <div class="category-item">
-            <h3>الفتاوى</h3>
+            <a href="#">الفتاوى</a>
         </div>
         <div class="category-item">
-            <h3>الدروس</h3>
+            <a href="#">الدروس</a>
         </div>
         <div class="category-item">
-            <h3>خطب الجمعة</h3>
+            <a href="#">خطب الجمعة</a>
         </div>
     </div>
 
@@ -110,3 +146,4 @@
     </script>
 </body>
 </html>
+
