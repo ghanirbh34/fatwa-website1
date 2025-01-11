@@ -188,6 +188,10 @@
         .latest-content-message {
             color: white; /* تغيير اللون إلى الأبيض */
         }
+
+        .latest-content p {
+            color: white; /* تغيير لون النص إلى الأبيض */
+        }
     </style>
 </head>
 <body>
@@ -270,6 +274,24 @@
         function redirectTo(url) {
             window.location.href = url;
         }
+
+        // دالة لإضافة المحتوى تلقائيًا
+        function addLatestContent() {
+            const latestContentDiv = document.getElementById('latest-content');
+            const audioElement = document.createElement('audio');
+            audioElement.controls = true;
+            const sourceElement = document.createElement('source');
+            sourceElement.src = "https://github.com/ghanirbh34/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac";
+            sourceElement.type = "audio/aac";
+            audioElement.appendChild(sourceElement);
+            const description = document.createElement('p');
+            description.textContent = "خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023";
+            latestContentDiv.appendChild(audioElement);
+            latestContentDiv.appendChild(description);
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        window.onload = addLatestContent;
     </script>
 </body>
 </html>
