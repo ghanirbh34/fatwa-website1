@@ -98,6 +98,24 @@
             background-color: #6610f2;
         }
 
+        .info-icon {
+            margin-left: 10px;
+        }
+
+        .info-icon button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .info-icon button:hover {
+            background-color: #6610f2;
+        }
+
         .category-container {
             display: flex;
             flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
@@ -153,6 +171,14 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* تغيير محاذاة عنوان "أحدث المحتويات" */
+        .latest-content-title {
+            text-align: right;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
@@ -167,6 +193,10 @@
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
+        <!-- زر معلومات -->
+        <div class="info-icon">
+            <button class="btn" onclick="redirectTo('info.html')">معلومات</button>
+        </div>
     </div>
 
     <div class="container category-container">
@@ -194,8 +224,9 @@
         </div>
     </div>
 
+    <!-- محاذاة العنوان إلى اليمين -->
     <div class="container">
-        <h2>أحدث المحتويات</h2>
+        <h2 class="latest-content-title">أحدث المحتويات</h2>
         <p>لا توجد محتويات حالياً.</p>
     </div>
 
@@ -227,3 +258,4 @@
     </script>
 </body>
 </html>
+
