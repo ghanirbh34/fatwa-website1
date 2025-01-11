@@ -149,6 +149,11 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        .category-item button {
+            font-size: 1rem; /* تقليل حجم الخط للأزرار */
+            padding: 10px; /* تقليل الحشوة داخل الأزرار */
+        }
+
         footer {
             background-color: #2c3e50;
             color: white;
@@ -177,7 +182,11 @@
             text-align: right;
             font-size: 1.8rem;
             margin-right: 20px;
-            color: #2c3e50;
+            color: white; /* تغيير اللون إلى الأبيض */
+        }
+
+        .latest-content-message {
+            color: white; /* تغيير اللون إلى الأبيض */
         }
     </style>
 </head>
@@ -227,7 +236,7 @@
     <!-- محاذاة العنوان إلى اليمين -->
     <div class="container">
         <h2 class="latest-content-title">أحدث المحتويات</h2>
-        <p>لا توجد محتويات حالياً.</p>
+        <p class="latest-content-message">لا توجد محتويات حالياً.</p>
     </div>
 
     <div id="no-content-message" class="no-content">
@@ -258,4 +267,3 @@
     </script>
 </body>
 </html>
-
