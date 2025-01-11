@@ -121,7 +121,6 @@
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
-        <button class="btn" onclick="redirectTo('index.html')">الرئيسية</button>
         <div class="info-icon">
             <button class="btn" onclick="redirectTo('info.html')">
                 <i class="bi bi-info-circle"></i> معلومات
@@ -178,7 +177,7 @@
                 document.getElementById('no-content-message').style.display = 'block';
             } else {
                 document.getElementById('no-content-message').style.display = 'none';
-                alert(تم البحث عن: ${query});
+                alert(`تم البحث عن: ${query}`);
             }
         }
 
