@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرئيات الشيخ عبد الحميد بوطاعة</title>
+    <title>معلومات عن الموقع</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -30,38 +30,24 @@
             font-size: 1.2rem;
             color: #ffffff;
         }
-        .center-button {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .center-button button {
-            background-color: #0d6efd;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .center-button button:hover {
-            background-color: #6610f2;
-        }
-        .video-list {
+        .container {
             text-align: center;
             margin-top: 20px;
-        }
-        .video-list h2 {
             background: rgba(44, 62, 80, 0.7); /* خلفية داكنة مع شفافية */
-            color: #ffffff;
-            padding: 10px;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
         }
-        .video-list ul {
+        .container h2, .container h3 {
+            color: #ffffff;
+        }
+        .container p {
+            color: #ffffff;
+        }
+        .container ul {
             list-style-type: none;
             padding: 0;
         }
-        .video-list ul li {
+        .container ul li {
             margin: 10px 0;
             color: #8B4513; /* اللون البني */
             font-size: 1.2rem; /* تغيير حجم النص */
@@ -78,20 +64,18 @@
 <body>
 
     <header>
-        <h1>مرئيات الشيخ عبد الحميد بوطاعة</h1>
-        <p>حفظه الله ورعاه</p>
+        <h1>معلومات عن الموقع</h1>
     </header>
 
-    <div class="center-button">
-        <button class="btn" onclick="redirectTo('index.html')">الرئيسية</button>
-    </div>
-
-    <div class="video-list">
-        <h2>قائمة المرئيات</h2>
+    <div class="container">
+        <h2>عن الموقع</h2>
+        <p>منبر الشيخ عبد الحميد بوطاعة، منصة تهدف إلى نشر العلم الشرعي وفق المنهج السلفي. تحتوي على خطب جمعة، دروس ومواعظ مفيدة، وفتاوى فقهية في مختلف المواضيع.</p>
+        <h3>المنشئون</h3>
         <ul>
-            <li>مرئية 1</li>
-            <li>مرئية 2</li>
-            <li>مرئية 3</li>
+            <li>روابح عبد الغني</li>
+            <li>روابح عبد المؤمن</li>
+            <li>روابح عبد الرحيم</li>
+            <li>روابح عبد الرحمان</li>
         </ul>
     </div>
 
@@ -100,10 +84,5 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function redirectTo(url) {
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
